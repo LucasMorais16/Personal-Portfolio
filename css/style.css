@@ -1,0 +1,291 @@
+/* Reset default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+/* Header Styles */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+header .logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    /* Accent font inspired by GTA Vice City */
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Navigation Styles */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff5f8d;
+    /* Neon pink accent */
+}
+
+/* Hamburger Menu Styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    background: linear-gradient(180deg,
+            #3A5894 0%,
+            /* Azul mais escuro no topo */
+            #6D85BF 20%,
+            /* Azul claro */
+            #B87FBF 50%,
+            /* Lilás suave */
+            #E8A177 80%,
+            /* Laranja rosado */
+            #FAD97F 100%
+            /* Amarelo dourado suave */
+        );
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px;
+    /* Offset para o header fixo */
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    /* Use accent font for titles */
+    font-family: 'Press Start 2P', cursive;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    position: relative;
+    /* Accent font for section titles */
+    font-family: 'Press Start 2P', cursive;
+}
+
+.section-title::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #ff5f8d;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+/* About Section */
+#about {
+    background-color: #222;
+    padding: 60px 0;
+    
+}
+
+/* Portfolio Section */
+#portfolio {
+    background-color: #1a1a1a;
+    padding: 60px 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+}
+
+.project-info {
+    padding: 15px;
+}
+
+.project-title {
+    /* Use accent font for short project titles */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Contact Section */
+#contact {
+    background-color: #222;
+    padding: 60px 0;
+}
+
+.contact-container {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h3{
+   margin-bottom: 30px; 
+}
+
+/* Footer Styles */
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+/* Fade-in Animation */
+/* Initially hidden elements */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+/* When visible, fade in */
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    /* Header adjustments */
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Mobile Navigation Menu with animation and full-width extension do header */
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        /* Mesma opacidade do header */
+        overflow: hidden;
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+    }
+
+    nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Contact Section adjustments */
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .divider {
+        width: 100%;
+        height: 1px;
+    }
+}
