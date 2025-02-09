@@ -112,6 +112,7 @@ header .logo a {
     justify-content: center;
     text-align: center;
     padding-top: 60px;
+    overflow-x: hidden;
     /* Offset para o header fixo */
 }
 
@@ -237,14 +238,14 @@ footer {
 /* Responsive Styles */
 @media (max-width: 768px) {
 
-    #hero {
-        background-size: contain;
-    }
-
     /* Header adjustments */
     .header-container {
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    #hero {
+        background-size: contain;
     }
 
     .menu-toggle {
