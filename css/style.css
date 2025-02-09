@@ -249,6 +249,7 @@ footer {
 
     .hero-title {
         font-size: 2rem;
+        overflow-x: hidden;
         /* Use accent font for titles */
     }
 
