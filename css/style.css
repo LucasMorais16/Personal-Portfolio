@@ -237,6 +237,10 @@ footer {
 /* Responsive Styles */
 @media (max-width: 768px) {
 
+    #hero {
+        background-size: contain;
+    }
+
     /* Header adjustments */
     .header-container {
         flex-direction: row;
