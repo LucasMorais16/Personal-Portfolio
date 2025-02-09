@@ -112,7 +112,6 @@ header .logo a {
     justify-content: center;
     text-align: center;
     padding-top: 60px;
-    overflow-x: hidden;
     /* Offset para o header fixo */
 }
 
@@ -246,6 +245,11 @@ footer {
 
     #hero {
         background-size: contain;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        /* Use accent font for titles */
     }
 
     .menu-toggle {
