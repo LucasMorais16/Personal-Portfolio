@@ -120,6 +120,7 @@ header .logo a {
     margin-bottom: 20px;
     /* Use accent font for titles */
     font-family: 'Press Start 2P', cursive;
+    overflow-wrap: break-word;
 }
 
 .hero-subtitle {
