@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: 'BigMoka';
-    src: url('/fonts/BigMokaV2.ttf') format('truetype');
+    src: url('../fonts/BigMokaV2.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -54,7 +54,7 @@ header .logo a {
     color: #fff;
     font-size: 3rem;
     /* Accent font inspired by GTA Vice City */
-    font-family: 'BigMoka', sans-serif !important;
+    font-family: 'BigMoka', sans-serif;
 }
 
 /* Navigation Styles */
