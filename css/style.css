@@ -7,8 +7,8 @@
 
 @font-face {
     font-family: 'BigMoka';
-    src: url('/fonts/BigMokaV2.ttf');
-    font-weight: bold;
+    src: url('../fonts/BigMokaV2.ttf'), url('../fonts/BigMokaV2.woff2');
+    font-weight: normal;
     font-style: normal;
 }
 
