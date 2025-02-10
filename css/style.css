@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'BigMoka';
+    src: url('/fonts/BigMokaV2.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 /* Base Styles */
 body {
     font-family: 'Open Sans', sans-serif;
@@ -45,9 +52,9 @@ header.hidden {
 header .logo a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 3rem;
     /* Accent font inspired by GTA Vice City */
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'BigMoka', sans-serif;
 }
 
 /* Navigation Styles */
@@ -116,10 +123,10 @@ header .logo a {
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: 5rem;
     margin-bottom: 20px;
     /* Use accent font for titles */
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'BigMoka', sans-serif;
     overflow-wrap: break-word;
 }
 
@@ -129,11 +136,11 @@ header .logo a {
 
 /* Section Titles */
 .section-title {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 20px;
     position: relative;
     /* Accent font for section titles */
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'BigMoka', sans-serif;
 }
 
 .section-title::after {
@@ -185,8 +192,8 @@ header .logo a {
 
 .project-title {
     /* Use accent font for short project titles */
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1rem;
+    font-family: 'BigMoka', sans-serif;
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
@@ -249,7 +256,7 @@ footer {
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 3rem;
         overflow-x: hidden;
         /* Use accent font for titles */
     }
