@@ -54,7 +54,7 @@ header .logo a {
     color: #fff;
     font-size: 3rem;
     /* Accent font inspired by GTA Vice City */
-    font-family: 'BigMoka', sans-serif;
+    font-family: 'BigMoka', sans-serif !important;
 }
 
 /* Navigation Styles */
