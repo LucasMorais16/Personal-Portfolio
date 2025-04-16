@@ -1,0 +1,235 @@
+/* projects-style.css */
+
+/* Configura a altura total e o layout flex para body */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    line-height: 1.6;
+    margin: 0; /* Já incluso no reset a seguir */
+    padding: 0;
+}
+
+main {
+    flex: 1; /* Faz com que o main ocupe o espaço disponível */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+@font-face {
+    font-family: 'BigMoka';
+    src: url('BigMokaV2.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Header Styles (idêntico ao index) */
+header {
+    background: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+header .logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 3rem;
+    /* Accent font inspired by GTA Vice City */
+    font-family: 'BigMoka', sans-serif;
+}
+
+/* Navigation */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff5f8d;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+/* Ajuste do conteúdo principal para compensar o header fixo */
+main {
+    padding-top: 80px; /* ajuste este valor conforme a altura do header */
+}
+
+/* Projects Section */
+#projects {
+    background-color: #1a1a1a;
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    position: relative;
+    font-family: 'BigMoka', sans-serif;
+}
+
+.section-title::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #ff5f8d;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+/* Grid de Projects */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    background: #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+}
+
+.project-info {
+    padding: 15px;
+}
+
+.project-title {
+    font-family: 'BigMoka', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+    }
+
+    nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}

@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Projects - Lucas Morais Portfolio</title>
-    <!-- Link para o CSS externo -->
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- Link para o CSS específico da página de projects -->
+    <link rel="stylesheet" href="css/projects-style.css" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet" />
 </head>
@@ -16,6 +16,7 @@
     <header id="header">
         <div class="container header-container">
             <h1 class="logo"><a href="#">Lucas Morais</a></h1>
+            <!-- Hamburger Menu Button for Mobile -->
             <button class="menu-toggle" id="menu-toggle">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -23,9 +24,9 @@
             </button>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#portfolio">Projects</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -37,7 +38,7 @@
             <div class="container">
                 <h2 class="section-title">All Projects</h2>
                 <div class="project-grid">
-                    <!-- Aqui você pode listar todos os projetos (os mesmos cards ou uma versão mais detalhada) -->
+                    <!-- Project Card 1 -->
                     <div class="project-card" data-project="1">
                         <img src="images/project1.jpg" alt="Project 1" />
                         <div class="project-info">
@@ -45,6 +46,7 @@
                             <p>A thrilling adventure game with extra details.</p>
                         </div>
                     </div>
+                    <!-- Project Card 2 -->
                     <div class="project-card" data-project="2">
                         <img src="images/project2.jpg" alt="Project 2" />
                         <div class="project-info">
@@ -52,6 +54,7 @@
                             <p>An immersive puzzle experience with additional insights.</p>
                         </div>
                     </div>
+                    <!-- Project Card 3 -->
                     <div class="project-card" data-project="3">
                         <img src="images/project3.jpg" alt="Project 3" />
                         <div class="project-info">
