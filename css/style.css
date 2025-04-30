@@ -159,6 +159,27 @@ header .logo a {
 
 }
 
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Classe da imagem */
+.about-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 200px;
+}
+
+
 /* Portfolio Section */
 #portfolio {
     background-color: #1a1a1a;
