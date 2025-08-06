@@ -113,7 +113,7 @@ main {
 }
 
 /* Projects Section */
-#projects {
+#project-description {
     background-color: #1a1a1a;
     padding: 60px 0;
 }
@@ -142,19 +142,6 @@ main {
     gap: 20px;
 }
 
-/* Background image variant for Project Card */
-.project-card.project-bg {
-    width: 300px;
-    height: 450px;
-    background: url('../images/memoryMatchCardGame-pictures/MemoryGameCapsuleImage.png') center/cover no-repeat;
-    position: relative;
-}
-.project-card.project-bg .project-info {
-    position: absolute;
-    bottom: 0;
-    background: rgba(0,0,0,0.6);
-    width: 100%;
-}
 
 .project-card {
     background: #2a2a2a;
@@ -246,4 +233,73 @@ footer {
 
 .fade-in.visible {
     opacity: 1;
+}
+/* Project description section */
+#project-description .project-section h3 {
+    margin-bottom: 20px;
+}
+/* Picture grid */
+.picture-grid {
+    display: grid;
+    /* Limit to maximum of 2 columns */
+    grid-template-columns: repeat(2, 1fr);
+    /* Fixed row height for uniformity */
+    grid-auto-rows: 350px;
+    gap: 20px;
+    margin-top: 20px;
+    /* Ensure uniform height for images */
+}
+.picture-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Placeholder for project content layout */
+.project-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+/* Modal Styles */
+.image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+}
+.image-modal .modal-content {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+}
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.modal-close:hover,
+.modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+#project-description .project-section p {
+    margin-bottom: 30px;
+}
+/* Align list bullets within container for Tools section */
+#project-description .project-section ul {
+    list-style-position: inside;
+    margin-bottom: 30px;
 }

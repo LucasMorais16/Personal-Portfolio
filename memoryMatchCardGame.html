@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Projects - Lucas Morais Portfolio</title>
+    <!-- Link para o CSS específico da página de projects -->
+    <link rel="stylesheet" href="css/MemoryMatchCardGame-style.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <h1 class="logo"><a href="index.html">Lucas Morais</a></h1>
+            <!-- Hamburger Menu Button for Mobile -->
+            <button class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da página de Projects -->
+    <main>
+        <!-- Project Description Section -->
+        <section id="project-description" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">Memory Match Card Game</h2>
+                <div class="project-content">
+                    <div class="project-section">
+                        <h3>About</h3>
+                        <p>Developed during my first year at university, this project began as a console-based memory match game for the Windows terminal. However, two classmates and I challenged ourselves to create a fully graphical interface version.</p>
+                        <p>The game features multiple difficulty levels: 'Easy' and 'Normal' differ in both memorization time and scoring per match. The 'Mãe Dinah' level—named after a famous Brazilian fortune teller—adds an extra challenge, allowing players to guess card positions with higher points awarded for correct matches.</p>
+                        <p>A leaderboard system—accessible through the menu—displays the top 10 players' scores.</p>
+                        <p>Additionally, a comprehensive save system stores both individual gameplay progress and the leaderboard data.</p>
+                    </div>
+                    <div class="project-section">
+                        <h3>Tools</h3>
+                        <ul>
+                            <li>C/C++</li>
+                            <li>Visual Studio 2019/2022</li>
+                            <li>Allegro 5</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h3>Pictures</h3>
+                        <div class="picture-grid">
+                            <img src="images/memoryMatchCardGame-pictures/MainMenu.png" alt="Main Menu">
+                            <img src="images/memoryMatchCardGame-pictures/Leaderboard.png" alt="Leaderboard">
+                            <img src="images/memoryMatchCardGame-pictures/DifficultySystem.png" alt="Difficulty System">
+                            <img src="images/memoryMatchCardGame-pictures/TypeName.png" alt="Type Name">
+                            <img src="images/memoryMatchCardGame-pictures/Game init.png" alt="Game Init">
+                            <img src="images/memoryMatchCardGame-pictures/Load-Save Game.png" alt="Load Save Game">
+                        </div>
+                    </div>
+                    <div class="project-section">
+                        <h3>Code</h3>
+                        <p><a href="https://github.com/LucasMorais16/Jogo-Da-Memoria" target="_blank" rel="noopener">GitHub repository</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2025 Lucas Morais. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript -->
+    <script src="js/script.js"></script>
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal">
+        <span class="modal-close">&times;</span>
+        <img id="modal-image" class="modal-content" src="" alt="Full size image">
+    </div>
+</body>
+
+</html>
