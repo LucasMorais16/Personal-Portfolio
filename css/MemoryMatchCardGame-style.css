@@ -241,24 +241,41 @@ footer {
 /* Picture grid */
 .picture-grid {
     display: grid;
-    /* Limit to maximum of 2 columns */
     grid-template-columns: repeat(2, 1fr);
-    /* Fixed row height for uniformity */
     grid-auto-rows: 350px;
     gap: 20px;
     margin-top: 20px;
-    /* Ensure uniform height for images */
+    cursor: pointer;
 }
 .picture-grid img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
+.picture {
+    overflow: hidden;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.picture:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
 /* Placeholder for project content layout */
 .project-content {
     display: flex;
     flex-direction: column;
     gap: 40px;
+}
+/* Accent link color for Code and Other Links sections */
+#project-description .project-section a {
+    color: #ff5f8d;
+    text-decoration: none;
+}
+#project-description .project-section a:hover {
+    text-decoration: underline;
 }
 /* Modal Styles */
 .image-modal {
