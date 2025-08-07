@@ -142,6 +142,22 @@ main {
     gap: 20px;
 }
 
+/* ===================================================================================== */
+
+.project-card.lemniscata{
+    width: 300px;
+    height: 450px;
+    background: url('../images/Lemniscata-pictures/LemniscataCapsuleImage.png') center/cover no-repeat;
+    position: relative;
+}
+
+.project-card.lemniscata .project-info{
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+}
+
 /* Background image variant for Project Card */
 .project-card.project-bg {
     width: 300px;
@@ -175,6 +191,7 @@ main {
 }
 
 .project-title {
+    /* Use accent font for short project titles */
     font-family: 'BigMoka', sans-serif;
     font-size: 2rem;
     margin-bottom: 10px;
@@ -184,6 +201,8 @@ main {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
+
+/* ===================================================================================== */
 
 footer {
     background-color: #111;

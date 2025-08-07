@@ -8,7 +8,8 @@
     <!-- Link para o CSS específico da página de projects -->
     <link rel="stylesheet" href="css/projects-style.css" />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Press+Start+2P&display=swap"
+        rel="stylesheet" />
 </head>
 
 <body>
@@ -24,9 +25,9 @@
             </button>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -39,12 +40,21 @@
                 <h2 class="section-title">All Projects</h2>
                 <div class="project-grid">
 
-                    <div class="project-card project-bg" data-project="2" onclick="window.location.href='memoryMatchCardGame.html';">
-                    <div class="project-info">
-                        <h3 class="project-title">Memory Match Card Game</h3>
-                        <p>C | C++ | Allegro 5</p>
+                    <div class="project-card lemniscata" data-project="1"
+                        onclick="window.location.href='Lemniscata.html';">
+                        <div class="project-info">
+                            <h3 class="project-title">Lemniscata</h3>
+                            <p>Unreal Engine 5.4 | C++</p>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="project-card project-bg" data-project="2"
+                        onclick="window.location.href='memoryMatchCardGame.html';">
+                        <div class="project-info">
+                            <h3 class="project-title">Memory Card Game</h3>
+                            <p>C | C++ | Allegro 5</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

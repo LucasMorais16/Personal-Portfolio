@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Projects - Lucas Morais Portfolio</title>
+    <!-- Link para o CSS específico da página de projects -->
+    <link rel="stylesheet" href="css/MemoryMatchCardGame-style.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <h1 class="logo"><a href="index.html">Lucas Morais</a></h1>
+            <!-- Hamburger Menu Button for Mobile -->
+            <button class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da página de Projects -->
+    <main>
+        <!-- Project Description Section -->
+        <section id="project-description" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">Lemniscata</h2>
+                <div class="project-content">
+                    <div class="project-section">
+                        <h3>About</h3>
+                        <p>Lemniscata is a first-person horror game currently in development in Unreal Engine since January 2025. I conceived this project in 2024, driven by my passion for the horror genre and a desire to create something uniquely my own. After refining the concept, I enlisted three collaborators to help bring the vision to life.</p>
+                        <p>I am responsible for overall project production, programming core mechanics, UX/UI logic, animation, and game design. I manage the development pipeline using Jira, assigning tasks and coordinating team efforts.</p>
+                        <p>Release Date: TBD<br>Platform: PC (Steam)</p>
+                    </div>
+                    <div class="project-section">
+                        <h3>Tools</h3>
+                        <h4>Programming</h4>
+                        <ul>
+                            <li>Unreal Engine 5.4</li>
+                            <li>Visual Studio 2022</li>
+                            <li>C++</li>
+                        </ul>
+                        <h4>3D</h4>
+                        <ul>
+                            <li>Blender</li>
+                        </ul>
+                        <h4>Texturing</h4>
+                        <ul>
+                            <li>Substance 3D Painter</li>
+                            <li>Gimp</li>
+                        </ul>
+                        <h4>UX/UI</h4>
+                        <ul>
+                            <li>Figma</li>
+                            <li>Unreal Engine 5.4</li>
+                        </ul>
+                        <h4>Sound</h4>
+                        <ul>
+                            <li>Audacity</li>
+                            <li>Suno</li>
+                            <li>OpenAI Text to Speech</li>
+                            <li>Cakewalk</li>
+                        </ul>
+                        <h4>Version Control</h4>
+                        <ul>
+                            <li>Azure DevOps</li>
+                            <li>Git</li>
+                            <li>Github</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h3>Pictures</h3>
+                        <h4>In Game</h4>
+                        <div class="picture-grid">
+                            <div class="picture">
+                                <img src="images/Lemniscata-pictures/MainMenu.png" alt="Main Menu">
+                            </div>
+                            <div class="picture">
+                                <img src="images/Lemniscata-pictures/ChooseSaveGame.png" alt="Leaderboard">
+                            </div>
+                            <div class="picture">
+                                <img src="images/Lemniscata-pictures/Lantern.png" alt="Difficulty System">
+                            </div>
+                            <div class="picture">
+                                <img src="images/Lemniscata-pictures/LanternInUse.png" alt="Type Name">
+                            </div>
+                            <div class="picture">
+                                <img src="images/Lemniscata-pictures/LampInUse.png" alt="Game Init">
+                            </div>
+                            <div class="picture">
+                                <img src="images/Lemniscata-pictures/LampInMap.png" alt="Load Save Game">
+                            </div>
+                            <div class="picture">
+                                <img src="images/Lemniscata-pictures/LanternInMap.png" alt="Load Save Game">
+                            </div>    
+                        </div>
+                        <br>
+                        <h4>Blueprints</h4>
+                        <div class="picture-grid">
+                            <div class="picture">
+                                <img src="images/Lemniscata-pictures/BlueprintPlayer.png" alt="Main Menu">
+                            </div>
+                            <div class="picture">
+                                <img src="images/Lemniscata-pictures/BlueprintPlayerController.png" alt="Leaderboard">
+                            </div>
+                            <div class="picture">
+                                <img src="images/Lemniscata-pictures/BlueprintInteractComponent.png" alt="Difficulty System">
+                            </div>
+                            <div class="picture">
+                                <img src="images/Lemniscata-pictures/BlueprintHUD.png" alt="Type Name">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <p>2025 Lucas Morais.</p>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript -->
+    <script src="js/script.js"></script>
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal">
+        <span class="modal-close">&times;</span>
+        <img id="modal-image" class="modal-content" src="" alt="Full size image">
+    </div>
+</body>
+
+</html>

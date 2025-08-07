@@ -57,17 +57,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach((link) => {
       link.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        // Only handle smooth scrolling for local anchors
+        if (!href.startsWith('#')) {
+          return; // allow default navigation for other pages
+        }
         e.preventDefault();
-        // Se for mobile, esconde o menu após o clique
+        // Hide mobile menu after click
         if (window.innerWidth <= 768) {
           nav.classList.remove('active');
         }
-        // Obtém o id da seção alvo (removendo o '#' do início)
-        const targetId = this.getAttribute('href').substring(1);
+        // Smooth scroll to section
+        const targetId = href.substring(1);
         const targetSection = document.getElementById(targetId);
         if (targetSection) {
           window.scrollTo({
-            top: targetSection.offsetTop - 50, // Ajusta para o header fixo
+            top: targetSection.offsetTop - 50, // offset for fixed header
             behavior: 'smooth',
           });
         }
