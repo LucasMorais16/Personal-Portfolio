@@ -79,19 +79,28 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   
-    // Fade-in animation on scroll using IntersectionObserver
+    // Fade-in animation on scroll using IntersectionObserver (with fallback)
     const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.2 };
-    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+    if ('IntersectionObserver' in window) {
+      const appearOptions = { threshold: 0.2 };
+      const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        });
+      }, appearOptions);
+      faders.forEach((fader) => {
+        appearOnScroll.observe(fader);
       });
-    }, appearOptions);
-    faders.forEach((fader) => {
-      appearOnScroll.observe(fader);
-    });
+    } else {
+      // Fallback: immediately show elements if IntersectionObserver unsupported
+      faders.forEach(f => f.classList.add('visible'));
+    }
+    // Guarantee first section becomes visible quickly (prevents rare mobile issues)
+    if (faders.length) {
+      requestAnimationFrame(() => faders[0].classList.add('visible'));
+    }
   
     // Image modal functionality
     const modal = document.getElementById('image-modal');
@@ -113,9 +122,11 @@ document.addEventListener('DOMContentLoaded', function () {
   
     // Dummy Contact Form Submission
     const contactForm = document.getElementById('contact-form');
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      alert('Thank you for your message!');
-      contactForm.reset();
-    });
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Thank you for your message!');
+        contactForm.reset();
+      });
+    }
   });
