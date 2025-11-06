@@ -10,9 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let accumulatedScroll = 0;
     const threshold = 50; // The amount of scroll needed to trigger the action
   
-  // Hamburger menu toggle
+    // Hamburger menu toggle
     menuToggle.addEventListener('click', function () {
-      nav.classList.toggle('active');
+      const isActive = nav.classList.toggle('active');
+      menuToggle.classList.toggle('open', isActive);
     });
   
   // Scroll event with accumulation logic
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
           if (nav.classList.contains('active')) {
             navWasActive = true;
             nav.classList.remove('active');
+            menuToggle.classList.remove('open');
           }
         }
         accumulatedScroll = 0;
@@ -45,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
           // If the dropdown was active, reactivate it
           if (navWasActive) {
             nav.classList.add('active');
+            menuToggle.classList.add('open');
             navWasActive = false;
           }
         }
@@ -66,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Hide mobile menu after click if the link is inside nav
         if (window.innerWidth <= 768 && this.closest('nav')) {
           nav.classList.remove('active');
+          menuToggle.classList.remove('open');
         }
   // Smooth scroll to section
         const targetId = href.substring(1);
