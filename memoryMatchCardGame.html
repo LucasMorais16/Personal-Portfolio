@@ -5,7 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Projects - Lucas Morais Portfolio</title>
-    <!-- Link para o CSS específico da página de projects -->
+    <!-- Base styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Page-specific styles -->
     <link rel="stylesheet" href="css/MemoryMatchCardGame-style.css" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet" />
@@ -16,7 +18,7 @@
     <header id="header">
         <div class="container header-container">
             <h1 class="logo"><a href="index.html">Lucas Morais</a></h1>
-            <!-- Hamburger Menu Button for Mobile -->
+            <!-- Mobile hamburger menu button -->
             <button class="menu-toggle" id="menu-toggle">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -25,16 +27,16 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#portfolio">Projects</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Conteúdo principal da página de Projects -->
+    <!-- Main content -->
     <main>
-        <!-- Project Description Section -->
+        <!-- Project description -->
         <section id="project-description" class="fade-in">
             <div class="container">
                 <h2 class="section-title">Memory Match Card Game</h2>
@@ -94,13 +96,35 @@
     <!-- Footer -->
     <footer id="footer">
         <div class="container">
-            <p>2025 Lucas Morais.</p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Lucas Morais</h4>
+                    <p class="footer-quote"><em>Expressing my imagination and creativity through the most complete form of art, video games.</em></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Other Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#about">About me</a></li>
+                        <li><a href="index.html#portfolio">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li><a href="mailto:lucas.santoslima.morais@hotmail.com">lucas.santoslima.morais@hotmail.com</a></li>
+                        <li>Ponta Grossa, Brazil</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Lucas Morais.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Script JavaScript -->
+    <!-- Scripts -->
     <script src="js/script.js"></script>
-    <!-- Image Modal -->
+    <!-- Image modal -->
     <div id="image-modal" class="image-modal">
         <span class="modal-close">&times;</span>
         <img id="modal-image" class="modal-content" src="" alt="Full size image">

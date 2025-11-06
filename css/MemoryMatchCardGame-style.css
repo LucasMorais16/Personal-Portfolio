@@ -1,6 +1,5 @@
-/* projects-style.css */
-
-/* Configura a altura total e o layout flex para body */
+/* MemoryMatchCardGame-style.css */
+/* Reset and base layout */
 
 * {
     margin: 0;
@@ -16,12 +15,12 @@ body {
     background-color: #1a1a1a;
     color: #fff;
     line-height: 1.6;
-    margin: 0; /* Já incluso no reset a seguir */
+    margin: 0;
     padding: 0;
 }
 
 main {
-    flex: 1; /* Faz com que o main ocupe o espaço disponível */
+    flex: 1; /* Allow main to fill available space */
 }
 
 .container {
@@ -38,7 +37,7 @@ main {
     font-style: normal;
 }
 
-/* Header Styles (idêntico ao index) */
+/* Header styles (same as index) */
 header {
     background: rgba(0, 0, 0, 0.2);
     position: fixed;
@@ -64,7 +63,7 @@ header .logo a {
     text-decoration: none;
     color: #fff;
     font-size: 3rem;
-    /* Accent font inspired by GTA Vice City */
+    /* Accent font */
     font-family: 'BigMoka', sans-serif;
 }
 
@@ -88,7 +87,7 @@ header .logo a {
     color: #ff5f8d;
 }
 
-/* Hamburger Menu */
+/* Hamburger menu */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -107,12 +106,12 @@ header .logo a {
     border-radius: 2px;
 }
 
-/* Ajuste do conteúdo principal para compensar o header fixo */
+/* Offset main for fixed header */
 main {
-    padding-top: 80px; /* ajuste este valor conforme a altura do header */
+    padding-top: 80px; /* Adjust if the header height changes */
 }
 
-/* Projects Section */
+/* Project section */
 #project-description {
     background-color: #1a1a1a;
     padding: 60px 0;
@@ -135,7 +134,7 @@ main {
     left: 0;
 }
 
-/* Grid de Projects */
+/* Projects grid */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -179,7 +178,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsividade */
+/* Responsive */
 @media (max-width: 768px) {
     .project-grid {
         grid-template-columns: 1fr;
@@ -225,7 +224,7 @@ footer {
     }
 }
 
-/* Fade-in Animation */
+/* Fade-in animation */
 .fade-in {
     opacity: 0;
     transition: opacity 1s ease-in;

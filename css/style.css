@@ -52,7 +52,7 @@ header .logo a {
     text-decoration: none;
     color: #fff;
     font-size: 3rem;
-    /* Accent font inspired by GTA Vice City */
+    /* Accent font */
     font-family: 'BigMoka', sans-serif;
 }
 
@@ -101,15 +101,10 @@ header .logo a {
     height: 100vh;
     background: linear-gradient(180deg,
             #3A5894 0%,
-            /* Azul mais escuro no topo */
             #6D85BF 20%,
-            /* Azul claro */
             #B87FBF 50%,
-            /* Lilás suave */
             #E8A177 80%,
-            /* Laranja rosado */
             #FAD97F 100%
-            /* Amarelo dourado suave */
         );
     background-size: cover;
     background-position: center;
@@ -124,7 +119,7 @@ header .logo a {
 .hero-title {
     font-size: 5rem;
     margin-bottom: 20px;
-    /* Use accent font for titles */
+    /* Accent font for titles */
     font-family: 'BigMoka', sans-serif;
     overflow-wrap: break-word;
 }
@@ -166,7 +161,7 @@ header .logo a {
     flex-wrap: wrap;
 }
 
-/* Classe da imagem */
+/* About image */
 .about-image {
     width: 300px;
     height: 300px;
@@ -180,7 +175,7 @@ header .logo a {
 }
 
 
-/* Portfolio Section */
+/* Portfolio section */
 #portfolio {
     background-color: #1a1a1a;
     padding: 60px 0;
@@ -188,8 +183,9 @@ header .logo a {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr; /* Stack projects vertically */
+    gap: 30px;
+    justify-items: start; /* Align cards to the left */
 }
 
 /* ===================================================================================== */
@@ -208,7 +204,7 @@ header .logo a {
     width: 100%;
 }
 
-/* Background image variant for Project Card */
+/* Background image variant for project card */
 .project-card.project-bg {
     width: 300px;
     height: 450px;
@@ -252,16 +248,112 @@ header .logo a {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
+/* New wide row layout for projects */
+.project-card.project-row {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    min-height: 280px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.project-row .project-media {
+    flex: 0 0 50%;
+    position: relative;
+    background: #111;
+}
+
+.project-row .project-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop to fill */
+    aspect-ratio: 16 / 9; /* Keep banner ratio */
+    display: block;
+}
+
+/* subtle highlight on hover */
+.project-card.project-row:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.project-row .project-details {
+    flex: 1 1 50%;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased spacing between texts inside the card */
+}
+
+.project-row .project-title {
+    margin: 0;
+}
+
+.project-row .project-subtitle {
+    color: #e8e8e8;
+    opacity: 0.9;
+    font-weight: 600;
+}
+
+.project-row .project-description {
+    color: #fff;
+}
+
+.project-row .project-tech {
+    color: #ff5f8d; /* accent */
+    font-weight: 600;
+}
+
+.project-row .project-meta {
+    color: #cfcfcf;
+}
+
+.project-row .dot-sep {
+    display: inline-block;
+    font-size: 18px; /* Larger bullet */
+    line-height: 1;
+    margin: 0 8px;
+}
+
+/* People icon next to count in project meta */
+.project-meta .meta-people {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.project-meta .meta-people svg {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+
+@media (max-width: 900px) {
+    .project-card.project-row {
+        min-height: unset;
+        flex-direction: column;
+    }
+    .project-row .project-media {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    .project-row .project-media img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+}
+
 /* ===================================================================================== */
 
-/* Botão "all projects" com aparência de card */
+/* "All projects" button styled as a card */
 .project-card.all-projects-button {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* O link interno do botão */
+/* Internal link of the button */
 .project-card.all-projects-button .project-link {
     text-decoration: none;
     color: #fff;
@@ -269,11 +361,11 @@ header .logo a {
     font-size: 1.5rem;
 }
 
-/* Força o botão a ficar na 2ª linha e na 3ª coluna (abaixo do 3º card) */
+/* Force the button to 2nd row, 3rd column (below the 3rd card) */
 .project-card.all-projects-button {
     grid-column: 3;
     grid-row: 2;
-    /* Caso queira alinhar o botão à direita dentro da célula */
+    /* Align the button to the right inside the cell */
     justify-self: end;
 }
 
@@ -283,6 +375,84 @@ header .logo a {
     padding: 60px 0;
 }
 
+/* Contact: card grid */
+.contact-grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    background: #2a2a2a;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff5f8d;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    flex: 0 0 auto;
+}
+
+/* Icon-only social button */
+.btn-icon {
+    transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-icon:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+/* Center the social card content */
+.contact-card.contact-social {
+    justify-content: center;
+}
+
+.contact-text h3 {
+    margin: 0 0 6px 0;
+    font-size: 1.1rem;
+}
+
+.contact-text p,
+.contact-text a {
+    color: #fff;
+    text-decoration: none;
+    max-width: 100%;
+    overflow-wrap: anywhere;  /* Break long email addresses gracefully */
+    word-break: break-word;    /* Fallback for older engines */
+}
+
+.contact-text a:hover {
+    text-decoration: underline;
+}
+
+.contact-text {
+    flex: 1 1 auto;      /* allow text area to shrink/grow within flex */
+    min-width: 0;        /* enable wrapping inside flex item */
+}
+
+/* Ensure the email link can wrap on more viewports */
+.contact-text a {
+    display: inline-block;   /* allows proper wrapping constraints */
+    white-space: normal;     /* ensure wrapping is allowed */
+    word-break: break-all;   /* Aggressive break for medium widths */
+}
 .contact-container {
     display: flex;
     align-items: stretch;
@@ -305,8 +475,65 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Fade-in Animation */
-/* Initially hidden elements */
+/* Footer layout */
+#footer {
+    background-color: #111;
+}
+
+#footer .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+    padding: 10px 0 8px;
+}
+
+#footer .footer-col h4 {
+    margin-bottom: 12px;
+    font-family: 'BigMoka', sans-serif;
+    font-size: 1.5rem;
+}
+
+#footer .footer-quote {
+    color: #ddd;
+}
+
+#footer .footer-links,
+#footer .footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+}
+
+#footer .footer-links a,
+#footer .footer-contact a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#footer .footer-links a:hover,
+#footer .footer-contact a:hover {
+    color: #ff5f8d;
+}
+
+#footer .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin-top: 18px;
+    padding-top: 12px;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    #footer .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        text-align: left;
+    }
+}
+
+/* Fade-in animation */
 .fade-in {
     opacity: 0;
     transition: opacity 1s ease-in;
@@ -317,21 +544,20 @@ footer {
     opacity: 1;
 }
 
-/* Responsive Styles */
+/* Responsive styles */
 @media (max-width: 768px) {
 
     .project-grid {
         grid-template-columns: 1fr;
-        /* Cada projeto em uma linha no mobile */
+    /* One project per row on mobile */
     }
 
-    /* Se cada item ocupar uma linha, não faz sentido forçar row/column.
-       Então retiramos o posicionamento fixo do botão: */
+    /* On mobile, no fixed grid placement for the button */
     .project-card.all-projects-button {
         grid-column: auto;
         grid-row: auto;
         justify-self: center;
-        /* Centraliza no mobile */
+        /* Center on mobile */
     }
 
     /* Header adjustments */
@@ -354,14 +580,13 @@ footer {
         display: flex;
     }
 
-    /* Mobile Navigation Menu with animation and full-width extension do header */
+    /* Mobile navigation menu with animation and full-width extension of the header */
     nav {
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(0, 0, 0, 0.7);
-        /* Mesma opacidade do header */
+        background: rgba(0, 0, 0, 0.7); /* Same opacity as header */
         overflow: hidden;
         transform: translateY(-20px);
         opacity: 0;
@@ -386,7 +611,7 @@ footer {
         text-align: center;
     }
 
-    /* Contact Section adjustments */
+    /* Contact section adjustments */
     .contact-container {
         flex-direction: column;
     }
@@ -395,4 +620,65 @@ footer {
         width: 100%;
         height: 1px;
     }
+}
+
+/* Hero actions (buttons under subtitle) */
+.hero-actions {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Thin outline */
+}
+
+.btn:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.7);
+    outline-offset: 2px;
+}
+
+.btn-primary {
+    background: #ff5f8d;
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(255, 95, 141, 0.35);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(255, 95, 141, 0.5);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 480px) {
+    .hero-actions {
+        flex-wrap: wrap;
+    }
+}
+
+/* Ensure inline SVG icons center inside hero buttons */
+.hero-actions .btn svg {
+    display: block;
 }

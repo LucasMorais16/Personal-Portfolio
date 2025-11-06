@@ -1,36 +1,36 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Header and Dropdown Elements
+  // Header and dropdown elements
     const header = document.getElementById('header');
     const menuToggle = document.getElementById('menu-toggle');
     const nav = document.querySelector('nav');
     let navWasActive = false;
     
-    // Variables for scroll accumulation
+  // Variables for scroll accumulation
     let lastScroll = window.pageYOffset;
     let accumulatedScroll = 0;
     const threshold = 50; // The amount of scroll needed to trigger the action
   
-    // Hamburger Menu Toggle
+  // Hamburger menu toggle
     menuToggle.addEventListener('click', function () {
       nav.classList.toggle('active');
     });
   
-    // Scroll event with accumulation logic
+  // Scroll event with accumulation logic
     window.addEventListener('scroll', function () {
       const currentScroll = window.pageYOffset;
       const delta = currentScroll - lastScroll;
   
-      // Se a direção do scroll mudar, reseta a acumulação
+  // If the scroll direction changes, reset the accumulation
       if ((delta > 0 && accumulatedScroll < 0) || (delta < 0 && accumulatedScroll > 0)) {
         accumulatedScroll = 0;
       }
       accumulatedScroll += delta;
   
-      // Se acumulado for maior que o threshold (scroll para baixo)
+  // If accumulated exceeds the threshold (scrolling down)
       if (accumulatedScroll > threshold) {
         if (!header.classList.contains('hidden')) {
           header.classList.add('hidden');
-          // Se o dropdown estiver ativo, salva seu estado e o esconde
+          // If the dropdown is active, remember its state and hide it
           if (nav.classList.contains('active')) {
             navWasActive = true;
             nav.classList.remove('active');
@@ -38,11 +38,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         accumulatedScroll = 0;
       }
-      // Se acumulado for menor que o -threshold (scroll para cima)
+  // If accumulated is less than -threshold (scrolling up)
       else if (accumulatedScroll < -threshold) {
         if (header.classList.contains('hidden')) {
           header.classList.remove('hidden');
-          // Se o dropdown estava ativo, reativa-o
+          // If the dropdown was active, reactivate it
           if (navWasActive) {
             nav.classList.add('active');
             navWasActive = false;
@@ -53,33 +53,33 @@ document.addEventListener('DOMContentLoaded', function () {
       lastScroll = currentScroll;
     });
   
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach((link) => {
+  // Smooth scrolling for any in-page anchor (e.g., nav links, hero buttons)
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach((link) => {
       link.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
-        // Only handle smooth scrolling for local anchors
+  // Only handle smooth scrolling for local anchors
         if (!href.startsWith('#')) {
-          return; // allow default navigation for other pages
+          return; // Allow default navigation for other pages
         }
         e.preventDefault();
-        // Hide mobile menu after click
-        if (window.innerWidth <= 768) {
+  // Hide mobile menu after click if the link is inside nav
+        if (window.innerWidth <= 768 && this.closest('nav')) {
           nav.classList.remove('active');
         }
-        // Smooth scroll to section
+  // Smooth scroll to section
         const targetId = href.substring(1);
         const targetSection = document.getElementById(targetId);
         if (targetSection) {
           window.scrollTo({
-            top: targetSection.offsetTop - 50, // offset for fixed header
+            top: targetSection.offsetTop - 50, // Offset for fixed header
             behavior: 'smooth',
           });
         }
       });
     });
   
-    // Fade-in animation on scroll using IntersectionObserver (with fallback)
+  // Fade-in animation on scroll using IntersectionObserver (with fallback)
     const faders = document.querySelectorAll('.fade-in');
     if ('IntersectionObserver' in window) {
       const appearOptions = { threshold: 0.2 };
@@ -94,15 +94,15 @@ document.addEventListener('DOMContentLoaded', function () {
         appearOnScroll.observe(fader);
       });
     } else {
-      // Fallback: immediately show elements if IntersectionObserver unsupported
+  // Fallback: immediately show elements if IntersectionObserver is unsupported
       faders.forEach(f => f.classList.add('visible'));
     }
-    // Guarantee first section becomes visible quickly (prevents rare mobile issues)
+  // Ensure first section becomes visible quickly (prevents rare mobile issues)
     if (faders.length) {
       requestAnimationFrame(() => faders[0].classList.add('visible'));
     }
   
-    // Image modal functionality
+  // Image modal functionality
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-image');
     const modalClose = document.querySelector('.modal-close');
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (e.target === modal) modal.style.display = 'none';
     });
   
-    // Dummy Contact Form Submission
+  // Contact form (demo)
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
       contactForm.addEventListener('submit', function (e) {
